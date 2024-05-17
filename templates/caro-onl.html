@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Caro Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles-caro.css') }}">
+</head>
+<body>
+  <h1 style="text-align: center;">Caro Game</h1>
+  <div class="form-container">
+    <form id="create-room-form">
+        <input type="text" id="create-room-code" placeholder="Room code">
+        <button type="submit">Tạo phòng</button>
+    </form>
+  </div>
+  <div class="form-container">
+    <form id="join-room-form">
+        <input type="text" id="join-room-code" placeholder="Room code">
+        <button type="submit">Vào phòng</button>
+    </form>
+  </div>
+  <div id="current-room-container" class="frame-container" style="display: none;">
+    <div class="frame-content">
+        <p id="current-room"></p>
+        <button id="leave-room-button" type="submit">Rời phòng</button>
+    </div>
+  </div>
+    <p id="player-count">Số người chơi: 0</p>
+    <p id="player-info">Đang chờ đủ 2 người chơi</p>
+    <p id="countdownme"></p>
+    <p id="countdownenemy"></p>
+
+    <!--Cập nhật trạng thái game-->
+    <div id="status"></div>
+    <div id="board">
+    </div>
+</body>
+<script>
+  alert('Chế độ: Người đấu Người online --> Tạo phòng và mời người chơi khác vào phòng');
+</script>
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+<script src="{{ url_for('static', filename='js/caro-onl.js') }}"></script>

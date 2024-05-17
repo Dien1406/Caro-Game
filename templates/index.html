@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Caro Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles-home.css') }}">
+</head>
+<body>
+  <div class="center">
+      <img class="logo" src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+      <div class="title">Game Caro - Project 1</div>
+      <p class="intro">Hãy chọn chế độ chơi và bắt đầu thử thách.</p>
+      <button class="button" onclick="window.location.href='/caro-onl'">Chơi Caro Online</button>
+     
+      <button class="button" onclick="window.location.href='/caro-computer'">Chơi Với Máy</button>
+    
+  </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+</html>
