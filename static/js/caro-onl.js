@@ -1,5 +1,4 @@
 // Kết nối socket qua server (KHI KHỞI TẠO TRÊN SERVER)
-// let socket = io.connect('https://thai-son-caro-game.glitch.me/');
 
 // Kết nối socket thông qua LAN (BUILD TRÊN LOCAL)
 let socket = io.connect('http://' + document.domain + ':' + location.port);

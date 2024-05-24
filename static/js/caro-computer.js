@@ -74,7 +74,7 @@ function checkWin(index, player) {
     [0, 1],
   ];
   for (let [dx, dy] of directions) {
-    let count = 1;
+    let count = 1; // Đếm số quân liên tiếp của người chơi hiện tại
     for (let i = 1; i < 5; i++) {
       let x = row + dx * i;
       let y = col + dy * i;

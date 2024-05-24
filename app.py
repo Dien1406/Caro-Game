@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, render_template, request
-from flask_socketio import SocketIO, emit, join_room, leave_room, disconnect
+from flask_socketio import SocketIO, emit, join_room, leave_room, disconnect #import SocketIO để giao tiếp giữa client và server
 from flask import jsonify
 
 app = Flask(__name__)
 socketio = SocketIO(app)
-rooms = {}
+rooms = {} # lưu trữ thông tin về các phòng chơi và người chơi trong mỗi phòng.
 
 # Trang home
 @app.route('/')
@@ -37,7 +37,7 @@ global_player_count = 0
 # Join phòng chơi (check các điều kiện)
 @socketio.on('join')
 def on_join(data):
-      global global_player_count
+      global global_player_count 
       room_code = data['room_code']
 
       if room_code not in rooms or len(rooms[room_code]['players']) >= 2:
@@ -132,10 +132,6 @@ def on_move(data):
   else:
       # Handle nếu không phải người chơi trong phòng
       emit('invalidMove', {'message': 'You are not in this room'}, room=request.sid)
-    
-@socketio.on('move_off')
-def on_move(data):
-    emit('move_off', data)
     
 @socketio.on('move_computer')
 def on_move(data):
